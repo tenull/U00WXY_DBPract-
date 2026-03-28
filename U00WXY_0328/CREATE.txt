@@ -1,0 +1,43 @@
+CREATE TABLE Tulajdonos(
+Ekod CHAR(3) PRIMARY KEY,
+Nev VARCHAR(50) NOT NULL,
+Varos VARCHAR(50),
+Telefon VARCHAR(20)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Auto(
+Rendszam CHAR(7) primary key,
+Tipus CHAR(10),
+Szin CHAR(10),
+Kor int(2) check (Kor >0),
+Ár int(8),
+Tulaj char(3) not null,
+Foreign key (Tulaj) references tulajdonos(Ekod));
+
+
+CREATE TABLE Auto (
+Rendszam Char(7) PRIMARY KEY,
+Tipus VARCHAR(50) NOT NULL,
+Szin VARCHAR(30),
+Kor INT,
+Ar INT,
+Tulaj CHAR(3),
+FOREIGN KEY (Tulaj) REFERENCES Tulajdonos(Ekod)
+) ENGINE=InnoDB;
+
+
+
+
+INSERT INTO Tulajdonos values('100','Kis János','Eger',209555666);
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('
+
+INSERT INTO Auto values('FER-831','Opel Corsa','Piros',18,390,100);
