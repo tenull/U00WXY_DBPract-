@@ -30,8 +30,8 @@ FOREIGN KEY (Tulaj) REFERENCES Tulajdonos(Ekod)
 
 
 INSERT INTO Tulajdonos values('100','Kis János','Eger',209555666);
-INSERT INTO Tulajdonos values('
-INSERT INTO Tulajdonos values('
+INSERT INTO Tulajdonos values('102','Kis Éva','Szerencs',308764432);
+INSERT INTO Tulajdonos values('103','Retek Ödön','Miskolc',308765532);
 INSERT INTO Tulajdonos values('
 INSERT INTO Tulajdonos values('
 INSERT INTO Tulajdonos values('
@@ -41,3 +41,23 @@ INSERT INTO Tulajdonos values('
 INSERT INTO Tulajdonos values('
 
 INSERT INTO Auto values('FER-831','Opel Corsa','Piros',18,390,100);
+INSERT INTO Auto values('GDE-525','Renault Twingo','Fekete',16,280,101);
+INSERT INTO Auto values('HUB-936','Suzui Swift','Fekete',16 ,500, 103);
+
+
+1. Listázzuk ki a tulajdonos táblából az összes Kis János nevű embert:
+Select * FROM tulajdonos where Nev='Kis János';
+
+2. Listázzuk ki a tulajdonos tábla Ekod és Név mezőjéből azokat, ahol Ekod=103:
+Select Ekod, nev FROM tulajdonos where Ekod=103;
+
+3. Keresse meg a tulajdonos táblában azokat a neveket, amelyek "K"betűvel kezdődik
+Select *, nev FROM tulajdonos WHERE nev LIKE 'K%';
+
+4.Kérdezze le azokat a tulajdonosokat ahol az Ekod 101 103 közé esik
+Select * FROM Tulajdonos Where Ekod BETWEEN 101 and 105;
+
+5.Kérdezze le azokat a tulajdonos ahol a cím üre?
+Select * FROM Tulajdonos Where Varos IS Null;
+
+6.Kérdezze le azokat a tulajdonosokat ahol a név V kezdődik?

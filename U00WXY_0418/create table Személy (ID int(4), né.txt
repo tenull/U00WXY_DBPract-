@@ -1,0 +1,58 @@
+create table Személy (ID int(4), név varchar(30));
+create table Személy (ID integer, név varchar(30))  - apex
+
+
+1.Születési év numerikus mező hozzáadása
+
+ALTER TABLE személy ADD Szülév int(4);
+ALTER TABLE személy ADD Szülév date     -apex
+
+2.A Szülév mező átnevezése Szüldátumra
+ALTER TABLE személy CHANGE Szülév szüldátum char(3);
+ALTER TABLE személy RENAME COLUMN Szülév TO szüldátum;  -apex
+
+
+3.A szüldátum mező adattípusának módosítása dátumra.
+ALTER TABLE személy MODIFY szüldátum date;
+
+4. Az ID mező átalakítása elsődleges kulcsmezővé.
+ALTER TABLE személy MODIFY ID int(4) primary key;
+
+5. 
+DESC személy;
+
+6. Az elsődleges kulcs törlése a táblából.
+ALTER TABLE személy DROP primary key;
+
+7. Szüldátum mező törlése
+ALTER TABLE személy DROP COLUMN szüldátum;
+
+8. A Személy tábla átnevezése Person-ra
+ALTER table személy RENAME AS person;
+ALTER TABLE személy RENAME TO PERSON;     -apex
+
+9. Szülév nevű mező hozzáadása a tábla elejére, majd törlése 
+ALTER TABLE PERSON ADD Szülév int(4) first;
+
+10. A név nevű mező adattípusának/adatértékének módosítása char(50) 
+ALTER TABLE Person MODIFY Név char(12);
+
+11.Integritási feltétel hozzáadása a Person táble Név mezőhöz!
+alter table Person add UNIQUE (Név);
+
+12. Integritási feltétel törlése a Person tábla Név mezőből
+Alter table Person DROP INDEX Név;
+
+-APEX 
+ Először le kell kérni : SYS_C00195921312;
+
+
+SELECT constraint_name
+FROM user_constraints
+WHERE table_name = 'PERSON'
+ AND constraint_type = 'U';
+
+12a. ALTER TABLE Person DROP CONSTRAINT SYS_C00195921312;   -apex
+
+
+13.
