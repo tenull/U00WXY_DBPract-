@@ -55,4 +55,6 @@ WHERE table_name = 'PERSON'
 12a. ALTER TABLE Person DROP CONSTRAINT SYS_C00195921312;   -apex
 
 
+
+mysqldump -u root kprlnb auto>c:\U00WXY_0409\u00wxy.sql
 13.
