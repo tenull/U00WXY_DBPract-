@@ -1,0 +1,25 @@
+insert into Kategoria values('k01', 'Kaja');
+
+insert into Termek values('t01', 'sör', 200, 'világos','k02');
+insert into Termek values('t02', 'bor', 200, 'vörös','k02');
+insert into Termek values('t03', 'zsömle', 20, 'kerek','k01');
+
+
+insert into Vasarlo values('v01', 'Kék Alma','1111','Eger','Kék u.12',2);
+insert into Vasarlo values('v02', 'Fekete Péter','2222','Miskolc','Hó u.72',3);
+insert into Vasarlo values('v03', 'Feke Farkas','3333','Budapest','Kő u.25',1);
+
+
+
+Adja meg a relációs sémát!
+Termek [Tkod Pk, Nev, Ar, Leiras]
+Vasarlas[Kod_FK,Datum, Darab, Azon FK]
+Vasarlo [VID PK, Nev, Irsz, Varos, Cím, FizMod]
+
+1. Adja meg a termékek nevét
+-Meg kell adni a kiírandó mezők nevét? Először a projekciót, és megadjuk a mezőnevet.
+select Nev from Termek;
+
+
+
+
